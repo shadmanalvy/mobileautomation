@@ -9,6 +9,9 @@ jobs:
       tag: 2021.10.1
     steps:
       - checkout
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
       - android/create-avd:
           avd-name: myavd
           install: true
